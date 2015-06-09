@@ -118,7 +118,8 @@
 								url: 'http://www.corsproxy.com/api.sba.gov/geodata/primary_city_links_for_state_of/' + value + '.json',
 								success: function(results) {
 									select_city.enable();
-									callback(results);
+									var obj = $.parseJSON(results);
+									callback(obj);
 								},
 								error: function() {
 									callback();
